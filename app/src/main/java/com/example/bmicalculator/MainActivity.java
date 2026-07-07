@@ -1,15 +1,14 @@
 package com.example.bmicalculator;
 
-import android.app.Activity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.Locale;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
     private EditText weightInput;
     private EditText heightInput;
     private TextView resultText;
@@ -27,19 +26,9 @@ public class MainActivity extends Activity {
         Button calculateButton = findViewById(R.id.calculateButton);
         Button clearButton = findViewById(R.id.clearButton);
 
-        calculateButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                calculateBmi();
-            }
-        });
+        calculateButton.setOnClickListener(view -> calculateBmi());
 
-        clearButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                clearForm();
-            }
-        });
+        clearButton.setOnClickListener(view -> clearForm());
     }
 
     private void calculateBmi() {
